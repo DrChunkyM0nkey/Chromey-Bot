@@ -1,0 +1,67 @@
+client.on('message', message =>{
+if(message.content.includes('https://')) {
+//delete the message
+
+
+    if(message.member.roles.cache.some(r=>["Owner", "Co-Owner",].includes(r.name)) ) return; { 
+        
+
+message.reply('Links are not allowed! You have recived a warn... choose how you handle it.')
+
+.then(message2 => {
+    message2.delete({timeout: 10})
+})
+    }
+}
+});
+
+
+
+const { MessageEmbed } = require('discord.js')
+
+//link auto-mod
+client.on('message', message => {
+if(message.content.includes('https://')) {
+
+//dm warn the user
+
+    if(message.member.roles.cache.some(r=>["Owner", "Co-Owner", "Co - Owner"].includes(r.name)) ) return; { 
+
+let embed = new MessageEmbed()
+
+.setTitle('Auto-Mod')
+
+.setDescription('**Auto-Mod** \n You have been punished for sending links. Please do not continue to send links in blocked channels. If continue you will recive higher punishments. \n Punishment Id ``YSDKASDDE_YAX``')
+
+.setColor('#00D166')
+
+.setFooter('You cannot appeal from an Auto-Mod punishment.')
+
+message.author.send(embed);
+    }
+}
+});
+
+client.on('message', message => {
+    if(message.content.includes('https://')) {
+//send a warning in chat for mods!
+
+
+        if(message.member.roles.cache.some(r=>["Owner", "Co-Owner",].includes(r.name)) ) return; { 
+    
+    let embed = new MessageEmbed()
+    
+    .setTitle(message.author.tag)
+    
+    .setDescription('😡 | Hey, please dont send links in this channel. A warning has been sent to your dms. ')
+    
+    .setColor('#00D166')
+    
+    .setFooter('You cann support our bot, also, get premium by using !premium.')
+    
+    message.channel.send(embed);
+
+        }
+    }
+    });
+    
