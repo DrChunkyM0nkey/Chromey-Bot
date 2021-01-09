@@ -1,0 +1,76 @@
+client.on('message', message => {
+    if(message.content === '!help') {
+        if(message.author.bot) return; {
+
+    
+    let embed = new MessageEmbed()
+
+    .setTitle('Chromey Help')
+
+    .setColor('#8050F0')
+
+    .setImage('https://media.discordapp.net/attachments/730996281123799090/796176295511326760/standard.gif')
+
+    .setThumbnail('https://cdn.discordapp.com/attachments/701632229461196911/796194975926714408/Chromey.gif')
+
+
+
+    .setDescription('```!help [command]``` \n __**🛠Moderation**__  - Shows help for moderation! \n __**📨Support**__ - Shows help for support \n __**😂Fun**__ - Shows help for fun \n ```!help mod \n!help support \n!help fun``` \n __**Want in depth help?**__ \n [Website](https://chromey.godaddysites.com) | [Discord](https://discord.gg/H5pzsJJFMn)\n **Tip:** Use ``!commands-all`` to see all of my commands!')
+
+    .setFooter('Pfp & Gif by MrTurtle#2568    ')
+message.channel.send(embed);
+        }
+    }
+    
+}
+    if(message.content === '!help mod') {
+    
+
+        let embed = new MessageEmbed()
+
+
+        .setTitle('Moderation Help')
+
+        .setColor('#D1DFE4')
+
+        .setThumbnail('https://cdn.discordapp.com/attachments/701632229461196911/796194975926714408/Chromey.gif')
+
+
+        .setDescription('__**Warn Commands**__ - ```!warn @user <Reason> | !unwarn @user <Reason>``` \n__**Mute Commands**__ - ```!mute @user <Reason> | !unmute @user <Reason>``` \n ```More Coming Soon!``` ')
+    
+        .setFooter('I will take moderation commands from roles named "Moderator" & "Head Moderator"')
+    
+        message.channel.send(embed);
+    }
+}
+    });
+    client.on('message', message => {
+    if(message.content === '!help support') {
+    
+        let embed = new MessageEmbed()
+
+        .setTitle('Support Help')
+
+        .setColor('#F0D050')
+
+        .setThumbnail('https://cdn.discordapp.com/attachments/701632229461196911/796194975926714408/Chromey.gif')
+
+
+        .setDescription('__**Appeal**__ - ```!appeal <Shows Appealing Proccess> | !auto-mod <Shows Info About Auto-Mod>``` \n__**Contact Staff**__ ```!contactstaff <Contacts Staff> | !tickets <Shows How To Use Tickets>```')
+    
+        message.channel.send(embed);
+    }
+}
+});
+
+client.on('message', message => {
+    if(message.content === '!commands-all') {
+    
+        let embed = new MessageEmbed()
+
+        .setTitle('Commands > All')
+
+        .setDescription('**Here is a list of all of my commands!**\n```!help\n!help mod\n!help support\n!help fun\n !warn\n!unwarn\n!mute\n!unmute\n!appeal\n!invite\n!premium\n!rr(Premium)\n!ticket-open\nticket-close\n!reply-appeal\n!remind```')
+message.channel.send(embed);
+        }
+    });
